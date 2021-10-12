@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <style>
+        .thum{
+            width:200px;
+            border:2px solid black;
+            z-index:1;
+        }
+
+        .zoomin{
+            z-index: 1000;
+            position: absolute;
+            display: none;
+            width:400px;
+        }
+        .imgs p{
+            display: none;
+        }
+
+        .captionDiv {
+            display: none;
+            position: absolute;
+            opacity: 0.5;
+            background-color: black;
+            color:white;
+            z-index: 1001;
+            font-size: 35px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+<div class="imgs">
+    <img class="thum" src="plane.png"  />
+    <p>Plane</p>
+    <img class="thum" src="https://image.shutterstock.com/image-illustration/modern-cars-studio-room-3d-260nw-735402217.jpg"  />
+    <p>car travel faster </p>
+    <img class="thum" src="https://media.wired.com/photos/5fd7ff52e0d489b7b9fd2e33/1:1/w_2400,c_limit/Business-MustangE-ERA04140.jpg"  />
+    <p>the best car in the market</p>
+    <img class="thum" src="https://www.mansory.com/sites/default/files/styles/view_3_columns/public/2020-08/DSC03868.jpg?itok=-MB8zO-l"  />
+    <p>my favorite car</p>
+    <img class="thum" src="https://image.shutterstock.com/image-illustration/modern-cars-studio-room-3d-260nw-735402217.jpg"  />
+    <p>car travel faster </p>
+    <img class="thum" src="https://media.wired.com/photos/5fd7ff52e0d489b7b9fd2e33/1:1/w_2400,c_limit/Business-MustangE-ERA04140.jpg"  />
+    <p>the best car in the market</p>
+    <img class="thum" src="https://www.mansory.com/sites/default/files/styles/view_3_columns/public/2020-08/DSC03868.jpg?itok=-MB8zO-l"  />
+    <p>my favorite car</p>
+
+    <div class="zoominDiv" >
+        <img class="zoomin" />
+        <div class="captionDiv"></div>
+    </div>
+</div>
+
+<div id="accordion">
+    <h3>Introduction</h3>
+    <div>
+      <p>
+      Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+      ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+      amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+      odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+      </p>
+    </div>
+    <h3>Lec1</h3>
+    <div>
+      <p>
+      Jquery make life easier
+      </p>
+    </div>
+    <h3>Section 3</h3>
+    <div>
+      <p>
+      Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+      Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+      ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+      lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+      </p>
+      <ul>
+        <li>List item one</li>
+        <li>List item two</li>
+        <li>List item three</li>
+      </ul>
+    </div>
+    <h3>Section 4</h3>
+    <div>
+      <p>
+      Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+      et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+      faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+      mauris vel est.
+      </p>
+      <p>
+      Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+      inceptos himenaeos.
+      </p>
+    </div>
+  </div>
+
+  <button class="ui-button ui-widget ui-corner-all">Start</button>
+
+    <script>
+
+        let caption = "";
+        $(".thum").mouseenter((e)=>{
+            //$(e.target).css({"width":"400px","position":"absolute","z-index":1000});
+            
+            $(".zoomin").attr("src",$(e.target).attr("src"))
+            $(".zoomin").show();
+            caption=$(e.target).next().text();
+
+            let centerX=$(e.target).offset().left + ($(e.target).outerWidth()/2)
+            let newLeft = centerX -$(e.target).outerWidth();
+            
+            let centerY=$(e.target).offset().top + ($(e.target).outerHeight()/2)
+            let newTop = centerY - $(e.target).outerHeight();
+            //$(".zoomin").css({"left":newLeft+"px","top":newTop+"px"})
+            $(".zoomin").css({"width":"200px",height:$(e.target).outerHeight(),left:$(e.target).offset().left,top:$(e.target).offset().top})
+
+            $(".zoomin").stop(true,true).animate({width:$(e.target).outerWidth()*2,height:$(e.target).outerHeight()*2,left:newLeft+"px",top:newTop+"px"},500)
+
+
+            
+        }
+        /*,(e)=>{
+            //$(e.target).css({"width":"200px","position":"relative","z-index":1});
+            $(".zoomin").attr("src","");
+            $(".zoomin").hide();
+        }*/)
+
+        $(".zoominDiv").mouseleave((e)=>{
+            $(".zoomin").attr("src","");
+            $(".zoomin").hide();
+            $(".captionDiv").hide();
+        })
+
+
+        $(".zoominDiv").click((e)=>{
+            $(".captionDiv").css({top: $(".zoomin").offset().top,left: $(".zoomin").offset().left,width:$(".zoomin").outerWidth(),height:$(".zoomin").outerHeight(),"line-height":$(".zoomin").outerHeight()+"px"})
+            $(".captionDiv").text(caption);
+            $(".captionDiv").toggle();
+        });
+
+        $( "#accordion" ).accordion();
+        
+
+        fetch("http://mywebsite.com").then((data)=>data.json)
+        .then((data)=>{
+
+        })
+
+
+        $.get("http://mywebsite.com",function(data){
+            data = JSON.parse(data);
+        })
+
+
+        fetch("http://mywebsite.com",{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(data)
+        }).then((data)=>data.json)
+        .then((data)=>{
+
+        })
+
+        $.post("http://mywebsite.com",JSON.stringify(data),function(){
+
+        })
+
+        
+
+
+        
+    </script>
+</body>
+</html>

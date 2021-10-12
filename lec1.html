@@ -1,0 +1,392 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--script src="https://code.jquery.com/jquery-3.5.1.min.js"></script-->
+    
+    <script src="jquery-3.5.1.min.js" ></script>
+    <script src="app.js" ></script>
+    <title>Document</title>
+    <style>
+        button[data-operation="+"]{
+            background-color: green;
+        }
+
+        .redBG{
+            background-color: red;
+        }
+
+
+
+        .btnOver{
+            background-color: green;
+        }
+    </style>
+    <script>
+
+
+        
+        //$(selector).action();
+
+        //run code when document ready
+        //$(documet).ready(function()
+        //$(function()
+
+        /*
+        $(function(){
+            $("#btn1").click(function(){
+                $(document.body).css("background-color","blue");
+            });
+        })
+        */
+
+
+
+
+        //.css("color", "#0088ff"); //change css
+
+        //.text("Hello World!"); //change inner Text
+        //.click(function() //event
+
+        //selectors
+        //$("#mark") //id
+        //$(".mark") //class
+        //$("p") //tagname
+        //$('input[type="text"]') //attr value
+        /*
+        $(function(){
+            $('button[data-operation="+"]').click(function(){
+                alert("sum");
+            })
+        })
+        */
+        /*
+        var btns = document.getElementsByTagName("button");
+        for(let i=0;i<btns.length;i++){
+            btns[i].addEventListener("click",doOperation)
+        }
+        */
+
+
+        /*
+        $(function(){
+            $("#btn1").click(function (){
+                alert("doing operation")
+            });
+        })
+
+        $(function(){
+            $("#container h2").text("Test2");
+        })*/
+
+        /*
+        $(function(){
+            $(".head1").css("background-color","blue");
+        })
+*/
+
+        //extra selectors
+        // Highlight table rows appearing at odd places
+        
+        /*$(function(){
+            $("tr:odd").css("background", "yellow");
+            $("tr:even").css("background", "orange");
+
+            $("h2:odd").css("background", "blue");
+            $("h2:even").css("background", "green");
+
+
+            $("#container h2:last").css("background", "black");
+        })*/
+        // Highlight table rows appearing at even places
+        //$("tr:even").css("background", "orange");
+
+        // Highlight first paragraph element
+        //$("p:first").css("background", "red");
+
+        // Highlight last paragraph element
+        //$("p:last").css("background", "green");
+
+        // Highlight all input elements with type text inside a form
+        //$("form :text").css("background", "purple");
+
+        // Highlight all input elements with type password inside a form
+        //$("form :password").css("background", "blue");
+
+        // Highlight all input elements with type submit inside a form
+        //$("form :submit").css("background", "violet");
+
+
+        //$(function)  //run function after page load
+        //$(element).click(function) //run function onclick
+        //$(document).ready(function) //run function after page load
+        //$(selector).text(newText) //replace old innerText with new Text for all selected elements
+        //click ,ready ,text, html , css(prop,value)
+
+    
+        
+
+
+
+        //jQuery Chaining
+
+
+        //get set 
+        //text html attr val
+
+
+        /*
+        $(function(){
+            $("a:first").attr("href","http://yahoo.com");
+            $("a:first").html("<h2>yahoo</h2>");
+        })
+        */
+
+        /*
+        $(function(){
+            $("input:first").val("Ahmed")
+            $("#btn2").click(function(){
+                alert($("input:first").val())
+            });
+        })
+        */
+
+
+        //calc example
+        /*
+        $(function(){
+            $("button").click(function(e){
+                let num1 = Number($('input[placeholder="num1"]').val());
+                let num2 = Number($('input[placeholder="num2"]').val());
+                let op = $(e.target).attr("data-operation");
+                //let result=eval(`${num1}${op}${num2}`);
+                let result=0;
+                switch(op){
+                    case "+":
+                        result = num1+num2;
+                    break;
+                    case "-":
+                        result = num1-num2;
+                    break;                    case "*":
+                        result = num1*num2;
+                    break;                    case "/":
+                        result = num1/num2;
+                    break;                    case "%":
+                        result = num1%num2;
+                    break;
+                }
+                
+                alert(result);
+            })
+        })
+*/
+        //insert
+        //append prepend before after wrap
+        /*
+        $(function(){
+            //$("#container").append("<h2>Test3</h2>")
+            //$("#container").prepend("<h2>Test3</h2>")
+            //$("#container").before("<h2>Test3</h2>")
+            //$("#container").after("<h2>Test3</h2>")
+            //$("#container").wrap("<div class='maincontainer'></div>")
+
+            //$("#container h2:first").after("<h2>Test3</h2>");
+        })
+        */
+
+        //remvoe
+        //empty remove unwrap removeAttr
+
+        $(function(){
+            //let h2Second = $("#container").children()[0];
+            //$(h2Second).remove();
+            //$("#container").empty();
+           // $("#container").unwrap();
+
+           //$("#container").removeAttr("id");
+        })
+        //css class
+        //addClass removeClass toggleClass
+        $(function(){
+            //$("#container").addClass("redBG")
+            //$("#container").removeClass("redBG")
+            //$("#container").toggleClass("redBG")
+           // $("#container").toggleClass("redBG")
+        });
+
+
+        //style
+        //$(selector).css("propertyName")
+        //$(selector).css("propertyName", "value");
+        //$(selector).css({"propertyName":"value", "propertyName":"value", ...});
+        $(function(){
+            //alert($("#container h2").css("color"));
+            /*$("#container").css({
+                color:"green",
+                "background-color":"red",
+                width:"100px",
+                height:"100px"
+            })
+            */
+            /*
+                let cont = document.getElementById("container");
+                cont.style.color="green";
+                cont.style.backgroundColor="red";
+                cont.style.width="100px";
+                cont.style.coheightlor="100px";
+            */
+            
+
+        });
+
+
+
+
+        //show hide toggle
+
+        /*
+        
+        $(function(){
+            $("#container").hover(function(){
+                //$("#container h2:first").hide(5000);
+               // $("#container h2:first").toggle();
+            },function(){
+                //$("#container h2:first").show(5000);
+                //$("#container h2:first").toggle();
+            })
+        });
+        */
+        
+        /*
+        $(function(){
+            $("button").hover(function(e){
+                //$(e.target).css("background","green");
+                
+                $(e.target).addClass("btnOver");
+            },function(e){
+                //$(e.target).css("background","yellow");
+                $(e.target).removeClass("btnOver");
+            })
+        })
+        */
+
+        //fadeIn fadeOut fadeToggle fadeTo//$(selector).fadeTo(speed, opacity, callback);
+        //slideUp slideDown slideToggle 
+        /*
+        $(function(){
+            $("#container").hover(function(){
+                $("#container h2:first").fadeOut("slow",function(){
+                    alert("fade out completed")
+                });
+            },function(){
+                $("#container h2:first").fadeIn("slow");
+            })
+        });
+        */
+
+        $(function(){
+
+            /*
+            $("#testDiv").hover(function(){
+                $("#testDiv").stop().slideUp("slow");
+            },function(){
+                $("#testDiv").stop().slideDown("slow");
+            })
+            */
+            /*
+            $("#container").click(function(){
+                $("#testDiv").stop().slideToggle("slow");
+            })
+            */
+        });
+
+        //animate
+        //$(selector).animate({ properties }, duration, callback);
+        
+        $(function(){
+            $("#movi1").hover(function(){
+
+            },function(){
+
+            })
+            //$("#testDiv").animate({ left:"100px",top:"0px",fontSize:"40px" }, 1000);
+        });
+        //+= , toggle
+        //$(selector).stop(stopAll, goToEnd);
+
+    </script>
+</head>
+<body>
+    <h2>Welcome</h2>
+
+    <h2 class="head1">Bye Bye</h2>
+    <div>
+        <div id="container"> 
+            <h2>Test1</h2>
+            <h2>Test2</h2>
+        </div>
+    </div>
+    <div id="testDiv" style="width:200px;height:200px;background:red;position:absolute">
+        test test test
+    </div>
+    <input type="text" placeholder="name" />
+    <input type="number" placeholder="num1" />
+    <input type="number" placeholder="num2" />
+    <button id="btn1" data-operation="+">Add</button>
+    <button id="btn2" data-operation="-">Sub</button>
+    <button data-operation="*">Multi</button>
+    <button data-operation="/">Div</button>
+    <button data-operation="%">Moduls</button>
+    <a href="http://www.google.com">google</a>
+    <div id="video1">
+        <img id="cover" style="width:100px;height:100px"  src="https://stat.overdrive.in/wp-content/odgallery/2020/06/57263_2020_Mercedes_Benz_GLS.jpg" />
+        <img id="player" style="width:100px;height:100px;display: none;"  src="https://stat.overdrive.in/wp-content/odgallery/2020/06/57263_2020_Mercedes_Benz_GLS.jpg" />
+
+    </div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>50</td>
+            <td>Alex</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

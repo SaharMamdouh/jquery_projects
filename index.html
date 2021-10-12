@@ -1,0 +1,234 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <script src="jquery.min.js" ></script>
+    <style>
+        .btnDisabled{
+            background-color: gray;
+            color:lightgray;
+        }
+
+        
+    </style>
+
+    <script>
+        //console.log($);
+        //document.querySelectorAll(".")
+
+        //$(selector).action();
+    </script>
+</head>
+<body>
+    <ul class="countries">
+        <li class="country active" >Egypt</li>
+        <li class="country">USA</li>
+        <li class="country">UK</li>
+    </ul>
+    <div id="mark" class="country" ></div>
+    <script>
+        /*
+        let activeEle = document.querySelector(".country.active");
+        let countryEles = document.querySelectorAll(".country");
+        for(let country of countryEles){
+            country.style.backgroundColor = "yellow";
+            country.style.color = "blue";
+        }
+        activeEle.style.backgroundColor = "red";
+        */
+
+        //$(".country").css({"background-color":"yellow","color":"blue"});
+        //$(".country.active").css("background-color","red");
+
+
+
+        //selectors
+        //$("#mark") //id
+        //$(".mark") //class
+        //$("p") //tagname
+        //$('input[type="text"]') //attr value
+        //let mydiv = document.getElementById("mark");
+        
+        //$(mydiv).css("color","green");
+
+
+        //$(document).ready(function(){
+        //    $("h1").css("color","green");
+        //})
+
+
+        //$(()=>{
+        //    $("h1").css("color","green");
+        //    alert("page loaded");
+        //})
+
+            //let startBtn = document.getElementById("startBtn")
+            //startBtn.addEventListener("click",()=>{
+            //    alert("started")
+            //})
+
+        $(()=>{
+            
+            /*$("#startBtn").click(function(e){
+                console.log(e);
+                alert("started");
+            });*/
+
+            $(".country").dblclick(function(){
+                $(this).css("background-color","green")
+            })
+
+            $("#username").keyup(function(){
+                let val = $(this).val();
+                //let val = this.value;
+                $("#currentUsername").html(val)
+            });
+
+            
+
+            //$(selector).action();
+
+            //$("#mark") //id
+            //$(".mark") //class
+            //$("p") //tagname
+            //$('input[type="text"]') //attr value
+            //$("tr:odd").css("background-color","red");
+            //$("tr:even").css("background-color","green");
+            //$("tr:first").css("background-color","black");
+            //$("tr:last").css("background-color","white");
+
+            //events    (window)(resize,scroll) 
+            //          (document)(ready) 
+            //          (form)(blur,change,focus,submit) 
+            //          (keyboard)(keypress,keydown,keyup)
+            //          (mouse)(click,dblclick,contextmenu,hover,mousedown,mouseenter,mouseleave,mouseup,mousemove,mouseover,mouseout)
+            //
+
+           
+            //attributes (html,text,val,attr,removeAttr)
+
+            //let btnid = $("#startBtn").attr("id");
+            //alert(btnid);
+            //$("#startBtn").attr("title","Start Working");
+
+            //$("#startBtn").removeAttr("title");
+
+
+            
+
+            //css (addClass,css,hasClass,removeClass,toggleClass);
+            //$("#startBtn").css("background-color","red")
+            //$("#startBtn").css({"background-color":"red","color":"white"})
+
+            //$("#startBtn").css("background-color","red").css("color","white")
+
+            //$("#startBtn").html("Stop").css("background-color","green")
+
+            //$("#startBtn").toggleClass("btnDisabled")
+            //$("#startBtn").removeClass("btnDisabled")
+            
+            /*$("#startBtn").click(function(e){
+                $("#startBtn").toggleClass("btnDisabled")
+                alert($("#startBtn").hasClass("btnDisabled"))
+            })*/
+            
+
+            //effects (hide,show,toggle,fadeIn,fadeOut,fadeTo,fadeToggle,slideDown,slideUp,slideToggle,animate,stop)
+
+            //$("table").slideUp(500);
+            //$("#startBtn").show();
+            //$("#startBtn").click(function(){
+            //    $("table").slideToggle(500);
+            //})
+
+
+            //manipulation (wrap,unwrap,append,prepend,before,after,empty,remove)
+            
+
+            /*let mytr = $(`<tr>
+                    <Td>ahmed6</Td><td>alex</td>
+                </tr>`);
+                */
+            
+            /*$("table").append(`<tr>
+                    <Td>ahmed6</Td><td>alex</td>
+                </tr>`);
+                $("table").prepend(`<tr>
+                    <Td>ahmed6</Td><td>alex</td>
+                </tr>`);
+                */
+               /*
+                $("tr:odd").css("background-color","red");
+                $("table").append(`<tr>
+                    <Td>ahmed6</Td><td>alex</td>
+                </tr>`)
+                $("table").append(`<tr>
+                    <Td>ahmed7</Td><td>alex</td>
+                </tr>`);
+                */
+                
+                //$("table").before("<h1>Users</h1>");
+                /*
+                let myh1 = document.createEelement("h1");
+                myh1.innerHTML = "Users";
+
+                let myh1 = $("<h1>Users</h1>");
+                myh1.click(function(){
+
+                })
+                $("table").after(h1);*/
+                //$("")
+                //$("table").wrap("<div class='tableContainer'></div>")
+                //$("#childDiv").unwrap();
+                //$("#childDiv").remove();
+                //$("#childDiv").empty();
+        })   
+    </script>
+
+    <button id="startBtn" title="stop" >Start</button>
+
+    <h1><span>Hi</span> Welcome</h1>
+
+    <input id="username" type="text" />
+    <div id="currentUsername"></div>
+
+    <div id="parentDiv">
+        <div id="childDiv">
+            Child Div
+        </div>
+    </div>
+
+    <table style="display: block;">
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Address
+            </th>
+        </tr>
+        <tr>
+            <Td>ahmed</Td><td>alex</td>
+        </tr>
+
+        <tr>
+            <Td>ahmed1</Td><td>alex</td>
+        </tr>
+        <tr>
+            <Td>ahmed2</Td><td>alex</td>
+        </tr>
+        <tr>
+            <Td>ahmed3</Td><td>alex</td>
+        </tr>
+        <tr>
+            <Td>ahmed4</Td><td>alex</td>
+        </tr>
+        <tr>
+            <Td>ahmed5</Td><td>alex</td>
+        </tr>
+    </table>
+</body>
+</html>

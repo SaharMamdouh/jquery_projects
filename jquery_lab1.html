@@ -1,0 +1,83 @@
+<body style=background-color:cadetblue>
+   
+    <center>
+        <h1 style="position: relative; top:50px;"> In Love With Deer</h1>
+        <div class="picture">
+            <div class="slide_show">
+                <img id ="img1" style="width:700px;height:500px;position: relative"  src="ghazala1.jpg"/>;
+            </div>
+            <div class="slide_show">
+                <img id ="img2" style="width:700px;height:500px;position: relative"  src="ghazala2.jpg"/>;
+            </div>
+        
+            <div class="slide_show">
+                <img id ="img3" style="width:700px;height:500px;position: relative"  src="ghazala3.jpg"/>;
+            </div>
+            <div class="slide_show">
+                <img id ="img4" style="width:700px;height:500px;position: relative"  src="ghazala4.jpg"/>;
+            </div>
+            <div class="slide_show">
+                <img id ="img5" style="width:700px;height:500px;position: relative"  src="ghazala5.jpg"/>;
+            </div>
+            
+        </div>
+        <div class="button">
+             <a class="next" onclick="nextImg(1)"> >></a>    
+            <a class="prev" onclick="nextImg(-1)"> <<</a>
+            </div>
+            
+        </center>
+        <script src="jquery-3.6.0.js"></script>
+        <style>
+        
+        .next, .prev {  
+                    cursor: pointer;  
+                    position: absolute;  
+                    top: 53%;  
+                    width: 15px;  
+                    height:15px;
+                    padding: 16px;  
+                    margin-top: -22px;  
+                    color:white;  
+                    font-weight: bold;  
+                    font-size: 18px;  
+                    transition: 0.6s ease;  
+                    display:flex;
+                 
+                }  
+                
+        </style>
+
+        <script>
+            $(".picture .slide_show img").css("border","solid 2px white")
+            $(".picture").css({"position":"relative","top":"100px"});
+            $(".next").css({"position":"absolute", "left":"1118px","bottom":"265px","border":"3px solid white","border-radius":"50%","background-color":"white","color":"blue"});
+            $(".prev").css({"position":"absolute", "right":"1123px","bottom":"270px","border":"3px solid white","border-radius":"50%","background-color":"white","color":"blue"});
+           
+        var Index = 1;
+        displayImages(Index);
+
+        function nextImg(x) {
+            displayImages((Index += x));
+            $(".picture .slide_show").fadeOut(2000,function(){
+                $(".button").show();
+            })
+
+        };
+        function displayImages(x) {
+            var i;
+            var slides = document.getElementsByClassName('slide_show');
+            if (x > slides.length) {
+                Index = 1;
+            }
+            if (x < 1) {
+                Index = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[Index - 1].style.display = 'block';
+        }
+        
+</script>
+        </body>

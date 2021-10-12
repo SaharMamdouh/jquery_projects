@@ -1,0 +1,64 @@
+<div class="menu">
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li class="main">Item3
+            <ul class="mainnested_list">
+                <li>Item 3-1</li>
+                <li>Item 3-2</li>
+                <li class="sub">Item 3-3
+                    <ul class="subnested_list">
+                        <li>Item 3-3-1</li>
+                        <li>Item 3-3-2</li>
+                        <li>Item 3-3-3</li>
+                        <li>Item 3-3-4</li>
+                        <li>Item 3-3-5</li>
+                    </ul>
+                </li>
+                <li>Item 3-4</li>
+                <li>Item 3-5</li>
+            </ul>
+            
+        </li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+    
+    </div>
+    
+     <script src="jquery-3.6.0.js"></script>
+    <script>
+
+    $("ul").css("list-style-type","none")
+    $("li").css({"padding":"10px","width":"100px"})
+    $(".menu ul").css({"display":"flex","padding":"8px","border":"solid 2px gray","width":"50%","poition":"relative","cursor":"pointer"})
+    $(".mainnested_list").css({"display":"none","width":"120px","height":"200px","float":"left","position":"absolute","z-index":"9999","top":"66px"})
+    $("ul.subnested_list").css({"display":"none","width":"150px","height":"200px","float":"left","position":"absolute","z-index":"10010","left":"136px"})
+   
+     $(".main").hover(function(){
+     $(this).css("background-color", "lightblue");
+     }, function(){
+     $(this).css("background-color", "white");
+     });
+
+     $(".mainnested_list li").hover(function(){
+    $(this).css("background-color", "lightblue");
+     }, function(){
+     $(this).css("background-color", "white");
+     });
+
+   
+
+    $(document).ready(function() {
+	 $('.menu .main').click(function() {
+        $('.main .mainnested_list').slideDown(1000);
+    });
+
+    $('.main .sub').click(function() {
+		$('.sub .subnested_list').slideDown(1000);
+
+	});
+  });
+
+    </script>
+    

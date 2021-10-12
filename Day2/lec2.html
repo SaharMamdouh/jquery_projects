@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js" ></script>
+    
+</head>
+<body>
+    <div id="studyArea" style="display: block;width:200px;height: 200px;padding:50px;border:20px solid black;margin:70px;">
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <ul>
+                <li>Alex2</li>
+                <li>Alex</li>
+                <li class="active" id="cairo"> <a class="link">Cairo</a></li>
+                <li>Aswan</li>
+                <li>Aswan2</li>
+            </ul>
+        </div>
+    </div>
+    <ul>
+        <li>Alex</li>
+        <li class="active">Cairo</li>
+        <li>Aswan</li>
+    </ul>
+    <script>
+        //dim
+        //width,innerWidth,outerWidth,outerWidth(true)
+        //height,innerHeight,outerHeight,outerHeight(true)
+        //console.log($("#studyArea").width(),$("#studyArea").height())
+        //console.log($("#studyArea").innerWidth(),$("#studyArea").innerHeight())
+        //console.log($("#studyArea").outerWidth(),$("#studyArea").outerHeight())
+        //console.log($("#studyArea").outerWidth(true),$("#studyArea").outerHeight(true))
+        //console.log($("#studyArea").position());
+        //console.log($("#studyArea").offset());
+
+        //Nav
+        //parent,parents,parentsUntil,children,find
+        //siblings,next,nextAll,nextUntil,prev,prevAll,prevUntil
+        //console.log($(".container").find(".active"));
+        
+        //console.log($(".container .active").nextUntil(""))
+        
+        //filters
+        //filter(), first(), last(), eq(), slice(), has(), not()
+
+        //$("li").last().css("background-color","red")
+        //$("ul li:last").last().css("background-color","red")
+        //$("ul").find("li:last").css("background-color","red")
+        //$("ul").children().last().css("background-color","red")
+        //$("ul li").slice(2,6).css("background-color","red");
+        ///$("ul li").has("a.link").css("background-color","red")
+        //$("ul li").find("a.link").css("background-color","red")
+    </script>
+
+
+    <img src="plane.png" style="width:200px;" />
+
+</body>
+</html>

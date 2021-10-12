@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <script src="jquery.min.js" ></script>
+    <style>
+        #plane{
+            width:200px;
+            position: absolute;
+            transform: translate(-50%,-100%) rotate(-25deg);
+            left:300px;
+            top:700px;
+            z-index: 1000;
+        }
+        .leanRight{
+            transform: translate(-50%,-100%) rotate(0deg) !important;
+        }
+        .leanLeft{
+            transform: translate(-50%,-100%) rotate(-50deg)!important;
+        }
+
+        .rocket{
+            display: block;
+            width:20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            left:300px;
+            top:650px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        
+        /*
+        $(()=>{
+            $("#startBtn").click(function(){
+                //$("#mysquare").animate({width:"500px",height:"700px",opacity:0.5},5000).animate({top:"400px"},5000);
+                $("#mysquare").animate({width:"-=500px"},5000);
+            })
+                
+            $("#stopBtn").click(function(){
+                $("#mysquare").stop(true,false);
+            });
+        })*/   
+
+        let arrowRightAnimate = false;
+        let arrowLeftAnimate = false;
+        let arrowTopAnimate = false;
+        let arrowDownAnimate = false;
+        let velocity = 600/1000; // velocity = distance / time
+                                    // time = distance / velocity ;
+
+        $(document).keydown(function(e){
+            console.log(e);
+            if(e.code=="ArrowRight" && !arrowRightAnimate){
+
+                arrowRightAnimate=true;
+                let distance = 600-$("#plane").position().left;
+                let time = distance / velocity;
+                $("#plane").animate({left:"600px"},time);
+                $("#plane").addClass("leanRight");
+            }else if(e.code=="ArrowLeft" && !arrowLeftAnimate){
+                arrowLeftAnimate=true;
+                let distance = $("#plane").position().left;
+                let time = distance * 1000 / 600;
+                $("#plane").animate({left:"0px"},time);
+                $("#plane").addClass("leanLeft");
+            }else if(e.code=="ArrowUp"&& !arrowTopAnimate){
+                arrowTopAnimate=true;
+                let distance = $("#plane").position().top;
+                let time = distance * 1000 / 700;
+                $("#plane").animate({top:"0px"},time);
+
+            }else if(e.code=="ArrowDown"&& !arrowDownAnimate){
+                arrowDownAnimate=true;
+                let distance = 700-$("#plane").position().top;
+                let time = distance * 1000 / 700;
+                $("#plane").animate({top:"700px"},time);
+
+            }else if(e.code=="Space" ){
+                let rocket = $(`<div class="rocket"></div>`);
+                let planePosition = $("#plane").position();
+                rocket.css({left:planePosition.left+145,top:planePosition.top+110});
+                
+                
+                
+                $("body").append(rocket);
+                let distance = rocket.position().top;
+                let time = distance * 500 / 700;;
+                rocket.animate({top:'0px'},time,function(){
+                    rocket.remove();
+                });
+
+            }
+        });
+
+        $(document).keyup(function(e){
+            $("#plane").stop(true);
+            arrowRightAnimate = false;
+            arrowLeftAnimate = false;
+            arrowTopAnimate = false;
+            arrowDownAnimate = false;
+            $("#plane").removeClass("leanRight");
+            $("#plane").removeClass("leanLeft");
+        })
+    </script>
+<button id="startBtn">Start</button>
+<button id="stopBtn">Stop</button>
+    <div id="mysquare" style="display: block;width:300px;height: 300px; position:absolute;background-color: red;"></div>
+</body>
+
+
+<img id="plane" src="plane.png" >
+</html>
